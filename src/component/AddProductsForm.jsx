@@ -13,7 +13,9 @@ export default function AddProductForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !price || !image || !description) return;
-    dispatch(addProduct({ image, name, price: parseFloat(price), description }));
+    dispatch(
+      addProduct({ image, name, price: parseFloat(price), description })
+    );
     setName("");
     setImage("");
     setPrice("");
@@ -32,6 +34,7 @@ export default function AddProductForm() {
         value={name}
         className={style}
         onChange={(e) => setName(e.target.value)}
+        requried
       />
       <label htmlFor="price">Price:</label>
       <input
@@ -41,14 +44,16 @@ export default function AddProductForm() {
         min={1}
         className={style}
         onChange={(e) => setPrice(e.target.value)}
+        required
       />
       <label htmlFor="image">Image URL:</label>
       <input
-        type="text"
+        type="url"
         placeholder="https://example.com/image.jpg"
         value={image}
         className={style}
         onChange={(e) => setImage(e.target.value)}
+        required
       />
       <label htmlFor="description">Description:</label>
       <input
@@ -57,6 +62,7 @@ export default function AddProductForm() {
         value={description}
         className={style}
         onChange={(e) => setDescription(e.target.value)}
+        required
       />
       <button
         type="submit"
