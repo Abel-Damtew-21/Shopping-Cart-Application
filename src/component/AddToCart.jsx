@@ -8,7 +8,7 @@ function AddtoCartBtn({ product }) {
     <button
       type="button"
       onClick={() => dispatch(addToCart(product))}
-      className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
+      className="mt-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg"
     >
       Add to Cart
     </button>
